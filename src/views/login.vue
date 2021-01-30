@@ -39,11 +39,16 @@ export default {
         username: this.username,
         password: this.password,
       };
+      let headers = {
+        showLoading : true ,
+        loadingTarget : '.user_login'
+
+      }
       if (this.username == "" || this.password == "") {
         this.$message.error("账号或密码不能为空！");
       } else {
         this.$http
-          .login(params)
+          .login(params,headers)
           .then((res) => {
             if (res.status == 0) {
               this.$message.success(res.msg);

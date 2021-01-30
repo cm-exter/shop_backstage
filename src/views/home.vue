@@ -21,7 +21,6 @@
 </template>
 
 <script>
-import Cookies from "js-cookie";
 export default {
   data() {
     return {
@@ -40,7 +39,6 @@ export default {
             this.$message.success("退出成功");
             this.$store.commit("remove_user_data");
             this.$router.push("/");
-            Cookies.remove("JSESSIONID");
           } else {
             this.$message.error("退出失败");
           }
@@ -66,7 +64,7 @@ export default {
   width: 100%;
   height: 100%;
 
-  .el-header {
+  .el-header { 
     background-color: #f8f8f8;
     display: flex;
     justify-content: space-between;

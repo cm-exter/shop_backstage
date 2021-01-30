@@ -7,7 +7,7 @@ import store from '@/store'
 const request = axios.create({
   baseURL: '/api', //设置请求的base url
   timeout: 40000, //超时时长
-  withCredentials : true// 允许携带cookie
+  withCredentials: true// 允许携带cookie
 });
 
 
@@ -118,8 +118,10 @@ export default {
         url,
         method: 'get',
         params,
-        showLoading: header.showLoading || true,
-        loadingTarget: header.loadingTarget || "body"
+        headers: {
+          showLoading: header.showLoading && true,
+          loadingTarget: header.loadingTarget || "body"
+        }
       }).then(res => {
         resolve(res.data)
       })
@@ -142,8 +144,11 @@ export default {
         url,
         method: 'post',
         params,
-        showLoading: header.showLoading || true,
-        loadingTarget: header.loadingTarget || "body"
+        headers: {
+          showLoading: header.showLoading && true,
+          loadingTarget: header.loadingTarget || "body"
+        }
+
       }).then(res => {
         resolve(res.data)
       })
@@ -165,8 +170,10 @@ export default {
         url,
         method: 'upload',
         params,
-        showLoading: header.showLoading || true,
-        loadingTarget: header.loadingTarget || "body"
+        headers: {
+          showLoading: header.showLoading && true,
+          loadingTarget: header.loadingTarget || "body"
+        }
       }).then(res => {
         resolve(res.data)
       })
@@ -188,8 +195,10 @@ export default {
         url,
         method: 'download',
         params,
-        showLoading: header.showLoading || true,
-        loadingTarget: header.loadingTarget || "body"
+        headers: {
+          showLoading: header.showLoading && true,
+          loadingTarget: header.loadingTarget || "body"
+        }
       }).then(res => {
         resolve(res.data)
       })
@@ -210,8 +219,10 @@ export default {
         url,
         method: 'put',
         params,
-        showLoading: header.showLoading || true,
-        loadingTarget: header.loadingTarget || "body"
+        headers: {
+          showLoading: header.showLoading && true,
+          loadingTarget: header.loadingTarget || "body"
+        }
       }).then(res => {
         resolve(res.data)
       })
@@ -232,8 +243,10 @@ export default {
         url,
         method: 'delete',
         params,
-        showLoading: header.showLoading || true,
-        loadingTarget: header.loadingTarget || "body"
+        headers: {
+          showLoading: header.showLoading && true,
+          loadingTarget: header.loadingTarget || "body"
+        }
       }).then(res => {
         resolve(res.data)
       })
