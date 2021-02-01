@@ -16,5 +16,17 @@ export default {
   loginout(params = '', header = '') {
     return http.post(api.loginout, params, header);
   },
+  //商品数据
+  product_list(params = '', header = '') {
+    return http.get(api.product_list, params, header);
+  },
+  //品类数据
+  category(params = '', header = '') {
+    return http.get(api.category, params, header);
+  },
+  //订单数据
+  order(params = '', header = '') {
+    return http.get(api.order, params, header);
+  },
 
 }
